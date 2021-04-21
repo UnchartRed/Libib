@@ -50,7 +50,7 @@ $(NAME): $(OBJ)
 		scp ../includes/ib.h ../../includes
 		@ar -rc $(NAME) $(OBJ)
 		scp $(NAME) ../
-		@printf "\n\n$(CYAN)Done, don't forget to compile wtih $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
+		@printf "\n\n$(CYAN)Done, don't forget to compile with $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
 		@make print_info
 
 clean:
