@@ -11,11 +11,10 @@
 char **ib_rev_str_arr(char **array)
 {
     int size = ib_str_size(array);
-    char **result = malloc(sizeof(char *) * size + 1);
+    char **result = malloc(sizeof(char *) * (size + 1));
 
     for (int i = 0; i < size; i++)
-        result[i] = malloc(sizeof(array) / size);
-    for (int i = 0; i < size; i++)
-        result[i] = array[size - i - 1];
+        result[i] = ib_strdup(array[size - i - 1]);
+    result[size] = NULL;
     return (result);
 }
