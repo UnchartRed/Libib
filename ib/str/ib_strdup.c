@@ -10,9 +10,11 @@
 
 char *ib_strdup(char const *str)
 {
-    char *copy = malloc(sizeof(char) * ib_strlen(str));
+    int length = ib_strlen(str);
+    char *copy = malloc(sizeof(char) * (length + 1));
 
-    for (int i = 0; str[i] != '\0'; i++)
+    for (int i = 0; i < length; i++)
         copy[i] = str[i];
+    copy[length] = '\0';
     return (copy);
 }
