@@ -21,7 +21,7 @@ CC	=	gcc
 
 SRC	= 	str/ib_strlen.c			\
 		str/ib_strcmp.c			\
-		str/ib_strcpy.c			\
+		str/ib_strdup.c			\
 		str/ib_revstr.c			\
 		num/ib_atoi.c			\
 		num/ib_itoa.c			\
@@ -47,29 +47,30 @@ CFLAGS = -Wall
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		scp ../includes/ib.h ../../includes
+		@mkdir -p ../includes
+		@scp ../includes/ib.h ../../includes
 		@ar -rc $(NAME) $(OBJ)
-		scp $(NAME) ../
+		@scp $(NAME) ../
 		@printf "\n\n$(CYAN)Done, don't forget to compile wtih $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
 		@make print_info
 
 clean:
 		@printf "\n$(RED)[cleaning...]$(WHITE)\n$(DEFAULT)"
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 		@printf "$(GREEN)done$(WHITE)\n$(DEFAULT)"
 
 fclean: clean
-		rm -f $(NAME)
-		rm -f ../$(NAME)
-		rm -f ../../includes/ib.h
+		@rm -f $(NAME)
+		@rm -f ../$(NAME)
+		@rm -f ../../includes/ib.h
 		@printf "$(GREEN)done$(WHITE)\n$(DEFAULT)"
 
 print_info:
 	@echo -e "\n"
 	@echo -e "$(PURPLE) ▄▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄▄"
 	@echo -e "$(PURPLE)█░░░░░░░░░░░░█ █░░░░░░░░░░░█"
-	@echo -e "$(PURPLE) ▀▀▀▀█░░█▀▀▀▀  █░░░░█▀▀▀█░░█"
-	@echo -e "$(PURPLE)     █░░█      █░░░░█▄▄▄█░░█"
+	@echo -e "$(PURPLE) ▀▀▀▀█░░█▀▀▀▀  █░░░░█▀▀█░░░█"
+	@echo -e "$(PURPLE)     █░░█      █░░░░█▄▄█░░░█"
 	@echo -e "$(PURPLE)     █░░█      █░░░░░░░░░░░█"
 	@echo -e "$(PURPLE)     █░░█      █░░█████████▄"
 	@echo -e "$(PURPLE)     █░░█      █░░░░░░░░░░░░█"

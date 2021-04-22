@@ -10,10 +10,11 @@
 
 char *ib_revstr(char const *str)
 {
-    char *copy = malloc(sizeof(char) * ib_strlen(str));
     int length = ib_strlen(str);
+    char *res = malloc(sizeof(char) * length + 1);
 
     for (int i = 0; i < length; i++)
-        copy[i] = str[length - i - 1];
-    return (copy);
+        res[i] = str[length - i - 1];
+    res[length] = '\0';
+    return (res);
 }

@@ -6,11 +6,12 @@
 */
 
 #include "../../includes/ib.h"
+#include <stddef.h>
 
 int *ib_sort_int(int *array, int size)
 {
     int tmp[size];
-    int *result;
+    int *result = NULL;
     int score = 0;
 
     for (int i = 0; i < size; i++, score = 0) {

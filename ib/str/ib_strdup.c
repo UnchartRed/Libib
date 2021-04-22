@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** ib_strcpy
+** ib_strdup
 ** File description:
 ** returns a copy of the string given as a parameter
 */
@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "../../includes/ib.h"
 
-char *ib_strcpy(char const *str)
+char *ib_strdup(char const *str)
 {
     char *copy = malloc(sizeof(char) * ib_strlen(str));
 
