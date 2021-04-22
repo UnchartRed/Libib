@@ -21,7 +21,7 @@ int ib_str_size(char **array);
 
 //       STRING
 char *ib_revstr(char const *str);
-char *ib_strcpy(char const *str);
+char *ib_strdup(char const *str);
 
 int ib_strlen(char const *str);
 
