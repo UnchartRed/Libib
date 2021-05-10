@@ -10,18 +10,16 @@
 
 char *ib_itoa(int num)
 {
-    char *result = malloc(sizeof(char) * 12);
-    bool negative = false;
+    bool negative = (num < 0);
+    char *result;
     int i = 0;
 
-    if (num < 0) {
-        num *= -1;
-        negative = true;
-    }
-    for (; num > 0; num /= 10, i++)
+    num *= (negative)?(-1):(1);
+    for (int cpy = num; cpy > 0; cpy /= 10, i++);
+    result = malloc(sizeof(char) * (i + negative + 1));
+    for (i = 0; num > 0; num /= 10, i++)
         result[i] = num % 10 + '0';
-    if (negative)
-        result[i] = '-';
-    result = ib_revstr(result);
-    return (result);
+    result[i] = '-';
+    result[i + negative] = '\0';
+    return (result = ib_revstr(result));
 }

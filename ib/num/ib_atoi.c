@@ -5,13 +5,16 @@
 ** returns a number, sent to the function as a string
 */
 
-int ib_atoi(char const *s)
+int ib_atoi(char const *str)
 {
     int number = 0;
+    int negative = 1;
+    int i = 0;
 
-    for (int i = 0; s[i] != '\0'; i++) {
+    for (; str[i] == '-'; i++, negative *= -1);
+    for (; str[i] != '\0'; i++) {
         number *= 10;
-        number += s[i] - '0';
+        number += str[i] - '0';
     }
-    return (number);
+    return (number * negative);
 }
