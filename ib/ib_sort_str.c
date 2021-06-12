@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 bool greater_str(char const *s1, char const *s2)
 {
@@ -20,7 +20,7 @@ bool greater_str(char const *s1, char const *s2)
 
 char **ib_sort_str(char **array)
 {
-    const int size = ib_str_size(array);
+    const int size = ib_arr_size(array);
     char **result = malloc(sizeof(char *) * size + 1);
     int score = 0;
 

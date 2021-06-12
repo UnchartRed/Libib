@@ -6,7 +6,7 @@
 */
 
 #include <unistd.h>
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 void ib_putstr(char const *str)
 {

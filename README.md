@@ -17,7 +17,7 @@
 ## Makefile & dir
     
    The provided Makefile will create a "includes" folder
-   containing the functions headers in a "ib.h" file.
+   containing the functions headers in a "../includes/ib.h" file.
     
         •string manipulation  ------------->   "str"
         •array manipulation --------------->   "arr"

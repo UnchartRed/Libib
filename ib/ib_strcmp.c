@@ -5,7 +5,7 @@
 ** returns 1 if the two strings are identical else 0
 */
 
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 bool ib_strcmp(char const *s1, char const *s2)
 {

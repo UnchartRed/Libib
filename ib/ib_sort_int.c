@@ -5,7 +5,7 @@
 ** returns a sorted array of int given as a parameter
 */
 
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 #include <stddef.h>
 
 int *ib_sort_int(int *array, int size)

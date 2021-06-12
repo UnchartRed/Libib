@@ -6,11 +6,11 @@
 */
 
 #include <stdlib.h>
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 char **ib_rev_str_arr(char **array)
 {
-    int size = ib_str_size(array);
+    int size = ib_arr_size(array);
     char **result = malloc(sizeof(char *) * (size + 1));
 
     for (int i = 0; i < size; i++)

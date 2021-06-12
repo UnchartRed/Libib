@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 char *ib_itoa(int num)
 {
