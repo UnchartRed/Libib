@@ -6,7 +6,7 @@
 */
 
 #include <unistd.h>
-#include "../../includes/ib.h"
+#include "../includes/ib.h"
 
 int ib_puterr(char const *error, int val)
 {

@@ -7,7 +7,7 @@
 
 #include <stddef.h>
 
-int ib_str_size(char **array)
+int ib_arr_size(char **array)
 {
     int elements = 0;
 

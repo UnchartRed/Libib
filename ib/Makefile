@@ -19,40 +19,19 @@ NAME	=	libib.a
 
 CC	=	gcc
 
-SRC	= 	str/ib_strlen.c			\
-		str/ib_strcmp.c			\
-		str/ib_strdup.c			\
-		str/ib_revstr.c			\
-		num/ib_atoi.c			\
-		num/ib_itoa.c			\
-		arr/ib_rev_str_arr.c	\
-		arr/ib_rev_int_arr.c	\
-		arr/ib_str_size.c		\
-		arr/ib_sort_int.c		\
-		arr/ib_sort_str.c		\
-		print/ib_putnbr.c		\
-		print/ib_puterr.c		\
-		print/ib_putstr.c
+SRC	= 	$(wildcard *.c)
 
 AUTHORS = RedGinor
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall
+CFLAGS = -Wall -O
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\n$(GREEN)[Compiling]$(WHITE) %s$(DEFAULT)" $@
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-		@mkdir -p ../includes
-		@scp ../includes/ib.h ../../includes
-		@ar -rc $(NAME) $(OBJ)
-		scp $(NAME) ../
-		@printf "\n\n$(CYAN)Done, don't forget to compile with $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
-		@make print_info
+all: $(NAME) clean
 
 clean:
 		@printf "\n$(RED)[cleaning...]$(WHITE)\n$(DEFAULT)"
@@ -60,10 +39,13 @@ clean:
 		@printf "$(GREEN)done$(WHITE)\n$(DEFAULT)"
 
 fclean: clean
-		@rm -f $(NAME)
 		@rm -f ../$(NAME)
-		@rm -f ../../includes/ib.h
-		@printf "$(GREEN)done$(WHITE)\n$(DEFAULT)"
+
+$(NAME): $(OBJ)
+		@ar -rc $(NAME) $(OBJ)
+		@mv $(NAME) ../
+		@printf "\n\n$(CYAN)Done, don't forget to compile wtih $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
+		@make print_info
 
 print_info:
 	@echo -e "\n"
