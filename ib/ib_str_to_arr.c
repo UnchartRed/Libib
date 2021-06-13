@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** Libib
+** ib_str_to_arr
 ** File description:
-** ib_str_to_word_array
+** puts the given string into an array
 */
 
 #include "../includes/ib.h"

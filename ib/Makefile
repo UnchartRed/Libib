@@ -39,15 +39,11 @@ clean:
 		@printf "$(GREEN)done$(WHITE)\n$(DEFAULT)"
 
 fclean: clean
-		@rm -f $(NAME)
 		@rm -f ../$(NAME)
-		@rm -f ../../includes/ib.h
 
 $(NAME): $(OBJ)
-		@mkdir -p ../includes
-		@scp ../includes/ib.h ../../includes
 		@ar -rc $(NAME) $(OBJ)
-		@scp $(NAME) ../
+		@mv $(NAME) ../
 		@printf "\n\n$(CYAN)Done, don't forget to compile wtih $(GREEN)$(BOLD)$(UNDER)-lib$(WHITE)\n$(DEFAULT)"
 		@make print_info
 

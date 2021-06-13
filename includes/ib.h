@@ -9,6 +9,7 @@
 #define IB_H
 
 #include <stdbool.h>
+#include <stdarg.h>
 #include <stdio.h>
 
 char **ib_str_to_arr(char const *str, char const *sep);
@@ -20,8 +21,9 @@ void ib_strcpy(char *dest, char const *src);
 bool ib_cmp(char const c, char const *str);
 int ib_puterr(char const *error, int val);
 int *ib_rev_int_arr(int *array, int size);
-int ib_free_arr(char **array, int val);
+void ib_print(const char *format, ...);
 int *ib_sort_int(int *array, int size);
+void ib_free(const char *format, ...);
 void *ib_calloc(int total, int size);
 char **ib_rev_str_arr(char **array);
 char **ib_sort_str(char **array);
