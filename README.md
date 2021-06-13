@@ -13,19 +13,3 @@
         •Makefiles
 
    This library will allow you to print, sort and manipulate data.
-
-## Makefile & dir
-    
-   The provided Makefile will create a "includes" folder
-   containing the functions headers in a "../includes/ib.h" file.
-    
-        •string manipulation  ------------->   "str"
-        •array manipulation --------------->   "arr"
-        •numbers manipulation ------------->   "num"
-        •prints/displays  ----------------->   "print"
-        •miscellaneous (other functions)  ->   "misc"
-
-## gcc rules
-
-      -I includes
-      -L [lib's directory] -lib
